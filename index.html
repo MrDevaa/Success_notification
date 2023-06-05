@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+            <div class="image"><img src="./image/2.jpg"></div>
+            <p class="message">Success</p>
+        </div>
+        <button class="click" type="button">Click Here !  </button>
+    </div>
+    
+</body>
+<script>
+
+        let box = document.querySelector(".box");
+        let image = document.querySelector(".image");
+        let message = document.querySelector(".message");
+        let click = document.querySelector(".click");
+        let settimeout = "";
+
+
+        click.onclick = function(){
+            clearTimeout(settimeout);
+            box.style.transitionDelay = "unset";
+            box.style.top = "10%";
+            message.style.fontSize = "30px";
+            message.style.margin = " 0px 10px";
+            box.style.transitionDelay = "500ms";
+
+
+            settimeout= setTimeout(() => {
+            box.style.top = "-10%";
+            message.style.fontSize = "0px";
+            message.style.margin = " 0px";
+            box.style.transitionDelay = "1000ms";
+
+
+            }, 2000)
+        }
+
+
+
+</script>
+</html>
